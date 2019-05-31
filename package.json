@@ -2,28 +2,53 @@
   "name": "electron-teamplate",
   "version": "1.0.0",
   "description": "A minimal Electron application written with Typescript",
+  "main": "./dist/main.js",
+  "build": {
+    "appId": "com.xxx.app",
+    "productName": "elecrom",
+    "copyright": "test",
+    "directories": {
+      "output": "build"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "",
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "dist": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && electron ./dist/main.js"
+    "dev": "npm run dist && electron ./dist/main.js",
+    "package": "electron-builder --win --x64"
   },
   "repository": "https://github.com/ShiXihong/electron-template.git",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo",
-    "typescript"
+    "Eypescript"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Shi Xihong",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
     "tslint": "^5.16.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
