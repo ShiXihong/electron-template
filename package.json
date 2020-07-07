@@ -40,7 +40,7 @@
   "author": "Shi Xihong",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.2",
+    "electron": "^7.2.4",
     "electron-builder": "^20.41.0",
     "tslint": "^5.16.0",
     "tslint-config-airbnb": "^5.11.1",
